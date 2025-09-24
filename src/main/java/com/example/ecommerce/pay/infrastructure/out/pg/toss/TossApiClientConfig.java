@@ -28,7 +28,8 @@ public class TossApiClientConfig {
         log.info("ApiClient Base URL: {}", BASE_URL);
         log.info("ApiClient Private Key: {}", SECRET_KEY);
     }
-    
+
+    @Bean
     public OkHttpClient okHttpClient(){
         Base64.Encoder encoder = Base64.getEncoder();
         byte[] encodedBytes =encoder.encode((SECRET_KEY + ":").getBytes(StandardCharsets.UTF_8));
